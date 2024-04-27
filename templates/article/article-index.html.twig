@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Article!{% endblock %}
+
+{% block body %}
+<div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Ullam accusamus eum, deserunt tenetur numquam 
+    incidunt reiciendis at odit earum vitae. 
+    Quo maiores recusandae a dolores omnis consectetur 
+    at ullam dolor!
+    <ul>
+        {% for article in articles %}
+            <li>
+                <a href="{{path("/articles/{slug}-{id}",{id:article.id, slug:article.slug}) }}">{{article.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
