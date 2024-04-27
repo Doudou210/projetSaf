@@ -102,8 +102,8 @@ class Article
         return $this->slug;
     }
 
-    public function setSlug(SluggerInterface $slugger): void
+    public function setSlug(string $slug): void
     {
-        $this->slug = $slugger->slug($this->titre)->lower();
+        $this->slug = $slug;
     }
 }
