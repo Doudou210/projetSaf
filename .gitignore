@@ -24,4 +24,17 @@
 /assets/vendor/
 ###< symfony/asset-mapper ###
 
-.env/
+/.env
+
+/var/cache/
+/var/log/
+/config/packages/dev/
+/config/packages/prod/
+.idea/
+.vscode/
+.DS_Store
+/vendor/
+*.bak
+*.swp
+###
+
