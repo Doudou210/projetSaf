@@ -5,12 +5,25 @@
 {% block body %}
 <div>
     <a href="{{path("addArticle")}}">Ajouter Article</a>
+    {% if articles is empty %}
+        <div class="d-flex align-items-center justify-content-center vh-50 font-bold">
+            <p>Il n'y a pas d'article</p>
+        </div>
+
+    {% else %}
     {% for article in articles %}
-        <h1> {{ article.titre }} </h1>
-        <p> {{article.description}} </p>
-        <p> {{article.prix}} </p>
-        <a href="{{path('edit',{id: article.id})}}">Edit</a><br>
-        <a href="{{path('delete',{id: article.id})}}">Supprimer</a>
+        <div>
+            <h1> {{ article.titre }} </h1>
+            <p> {{article.description}} </p>
+            <p> {{article.prix}} </p>
+            <div>
+                <a href="{{path('edit',{id: article.id})}}" class="btn btn-primary">Edit</a>
+                <a href="{{path('delete',{id: article.id})}}" class="btn btn-danger">Supprimer</a>
+            </div>
+        </div>
     {% endfor %}
+
+    {% endif %}
+    
 </div>
 {% endblock %}

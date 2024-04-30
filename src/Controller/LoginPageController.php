@@ -30,8 +30,8 @@ class LoginPageController extends AbstractController
         ]);
     }
 
-    #[Route("/profils/{id}/edit", name:"edit")]
-    public function edit(int $id): Response{
+    #[Route("/profils/{id}/edit", name:"profil")]
+    public function profil(): Response{
         // $form = $this->createForm(LogRegType::class){
         //     return $this->render("article/");
         // };

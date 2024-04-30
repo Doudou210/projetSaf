@@ -16,7 +16,7 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 class ArticleController extends AbstractController
 {
     //Pour voir les articles
-    #[Route('/articles', name: 'articles')]
+    #[Route('/articles', name: 'articles', methods:["GET"])]
     public function article(Request $request, ManagerRegistry $mr): Response
     {
         $articles= $mr->getRepository(Article::class)->findAll();
@@ -47,7 +47,7 @@ class ArticleController extends AbstractController
     }
     
     //Pour mettre à jour un article
-    #[Route('/articles/edit/{id}', name: 'edit', methods:['GET','POST'])]
+    #[Route('/articles/edit/{id}', name: 'edit', methods:['GET','UPDATE'])]
     public function edit(Article $article, Request $request,
     EntityManagerInterface $emi, SluggerInterface $slug){
         $form = $this->createForm(AddArticleType::class, $article);

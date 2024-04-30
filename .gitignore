@@ -39,3 +39,8 @@
 *.swp
 ###
 
+/compose.yaml
+/compose.override.yaml
+
+/composer.json
+/composer.lock
