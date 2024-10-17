@@ -17,7 +17,7 @@ class AddArticleType extends AbstractType
             ->add('description')
             ->add('prix')
             ->add("save", SubmitType::class,
-            ["label"=>"Ajouter l'article"])
+            ["label"=>"Valider"])
         ;
     }
 

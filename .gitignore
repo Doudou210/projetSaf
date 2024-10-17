@@ -44,3 +44,8 @@
 
 /composer.json
 /composer.lock
+.env
+.env.test
+
+/migrations
+/config

@@ -36,4 +36,9 @@ class LoginPageController extends AbstractController
         //     return $this->render("article/");
         // };
     }
+    
+    #[Route("/login", name:"login")]
+    public function login(): Response{
+        
+    }
 }

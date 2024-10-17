@@ -47,7 +47,7 @@ class ArticleController extends AbstractController
     }
     
     //Pour mettre à jour un article
-    #[Route('/articles/edit/{id}', name: 'edit', methods:['GET','UPDATE'])]
+    #[Route('/articles/edit/{id}', name: 'edit', methods:['GET','POST'])]
     public function edit(Article $article, Request $request,
     EntityManagerInterface $emi, SluggerInterface $slug){
         $form = $this->createForm(AddArticleType::class, $article);
@@ -58,6 +58,7 @@ class ArticleController extends AbstractController
             $article->setSlug($slug);
 
             $emi->flush();
+            return $this->redirectToRoute("articles");
         }
         return $this->render("article/edit.html.twig",[
             "form" => $form,
